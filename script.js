@@ -10,11 +10,27 @@ function convertToRoman(num) {
     };
 
   //your code here
+	let values = [1000, 900, 500, 400,
+				    100, 90, 50, 40,
+				     10, 9, 5, 4, 1];
+	
+	let symbols = ['M', 'CM', 'D', 'CD',
+				    'C', 'XC', 'L', 'XL',
+				    'X', 'IX', 'V', 'IV', 'I'];
 
+	let result = '';
+	values.forEach((item, i) => {
+		while(num>=item){
+			result += symbols[i];
+			num -= item;
+		}
+	});
+
+	return result;
 }
 // You can test your code by running the above function and printing it to console by pressing the run button at the top. To run it with input 36, uncomment the following line
 
-// console.log(convertToRoman(36));
+console.log(convertToRoman(36));
 
 
 
